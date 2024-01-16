@@ -18,25 +18,14 @@ body {
 }
 
 .item {
-  cursor: pointer;
   width: 150px;
+  cursor: pointer;
   margin: 10px;
   padding: 10px;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: white;
 }
-
-.image-container {
-  width: 100px;
-  height: 100px;
-  margin: auto;
-  background-size: cover;
-  background-position: center;
-  border-radius: 50%;
-}
-
-/* ...existing styles... */
 
 .image-container {
   width: 100px;

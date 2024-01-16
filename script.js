@@ -16,6 +16,29 @@ function displayMovieData() {
   });
 }
 
+function displayItems(endpoint, containerId) {
+  fetchData(endpoint, (data) => {
+    const itemsContainer = document.getElementById(containerId);
+    itemsContainer.innerHTML = "";
+    data.results.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "item";
+      div.innerHTML = item.name || item.title;
+      div.onclick = () =>
+        alert(`This item appears in: ${item.films.join(", ")}`);
+      itemsContainer.appendChild(div);
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  displayMovieData();
+  displayItems("starships", "spaceships");
+  displayItems("species", "creatures");
+});
+
+// ...existing functions...
+
 function displayItems(endpoint, containerId, type) {
   fetchData(endpoint, (data) => {
     const itemsContainer = document.getElementById(containerId);
